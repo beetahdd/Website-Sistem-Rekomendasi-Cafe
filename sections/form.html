@@ -1,62 +1,94 @@
 <section class="products section container" id="section-form">
     <h2 class="section__title">
-        Products
+        Search Cafe
     </h2>
+    <section class="form-section">
+        <div>
+        <h2>Masukkan Preferensi Pilihan Cafe Anda</h2>
+        </div>
 
-    <div class="products__container grid">
-        <article class="products__card">
-            <img src="assets/img/product1.png" alt="" class="products__img">
+        <form class="preference-form">
+            <div class="form-grid">
+                <!-- Kiri -->
+                <div class="form-group">
+                    <label>Pilih Jam Kedatangan</label>
+                    <input type="time" />
 
-            <h3 class="products__title">Spirit rose</h3>
-            <span class="products__price">$1500</span>
+                    <label>Ketersediaan Menu</label>
+                    <input type="text" />
 
-            <button class="products__button">
-                <i class='bx bx-shopping-bag'></i>
-            </button>
-        </article>
+                    <label>Pilihan Range Menu</label>
+                    <input type="text" />
 
-        <article class="products__card">
-            <img src="assets/img/product2.png" alt="" class="products__img">
+                    <label>Fasilitas AC</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ac" /> Tersedia</label>
+                        <label><input type="radio" name="ac" /> Tidak Tersedia</label>
+                    </div>
 
-            <h3 class="products__title">Khaki pilot</h3>
-            <span class="products__price">$1350</span>
+                    <label>Fasilitas Colokan</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="colokan" /> Tersedia</label>
+                        <label><input type="radio" name="colokan" /> Tidak Tersedia</label>
+                    </div>
 
-            <button class="products__button">
-                <i class='bx bx-shopping-bag'></i>
-            </button>
-        </article>
+                    <label>Parkir</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="parkir" /> Gratis</label>
+                        <label><input type="radio" name="parkir" /> Bayar</label>
+                    </div>
+                </div>
 
-        <article class="products__card">
-            <img src="assets/img/product3.png" alt="" class="products__img">
+                <!-- Kanan -->
+                <div class="form-group">
+                    <label>Nilai Makanan</label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
 
-            <h3 class="products__title">Jubilee black</h3>
-            <span class="products__price">$870</span>
+                    <label>Nilai Layanan</label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
 
-            <button class="products__button">
-                <i class='bx bx-shopping-bag'></i>
-            </button>
-        </article>
+                    <label>Nilai Suasana</label>
+                    <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
 
-        <article class="products__card">
-            <img src="assets/img/product4.png" alt="" class="products__img">
+                    <label>Fasilitas WIFI</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="wifi" /> Tersedia</label>
+                        <label><input type="radio" name="wifi" /> Tidak Tersedia</label>
+                    </div>
 
-            <h3 class="products__title">Fosil me3</h3>
-            <span class="products__price">$650</span>
+                    <label>Fasilitas Smoking Area</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="smoking" /> Tersedia</label>
+                        <label><input type="radio" name="smoking" /> Tidak Tersedia</label>
+                    </div>
 
-            <button class="products__button">
-                <i class='bx bx-shopping-bag'></i>
-            </button>
-        </article>
+                    <label>Pilihan Rating</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="rating" /> 1-3</label>
+                        <label><input type="radio" name="rating" /> 4-5</label>
+                    </div>
+                </div>
+            </div>
 
-        <article class="products__card">
-            <img src="assets/img/product5.png" alt="" class="products__img">
-
-            <h3 class="products__title">Duchen</h3>
-            <span class="products__price">$950</span>
-
-            <button class="products__button">
-                <i class='bx bx-shopping-bag'></i>
-            </button>
-        </article>
-    </div>
+            <button type="submit" class="submit-btn">CARI</button>
+        </form>
+    </section>
 </section>

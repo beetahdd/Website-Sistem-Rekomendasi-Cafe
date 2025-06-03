@@ -10,8 +10,8 @@
             </h1>
 
             <div class="home__btns">
-                <a href="#" class="button button--gray button--small">LIHAT</a>
-                <a href="#" class="button button--gray button--small">CARI</a>
+                <a href="#section-cafe-list" class="button button--gray button--small">LIHAT</a>
+                <a href="#section-form" class="button button--gray button--small">CARI</a>
             </div>
         </div>
 
@@ -21,3 +21,33 @@
         </div>
     </div>
 </section>
+
+<script>
+    // Fungsi untuk memuat file HTML ke dalam section
+    function loadSection(id, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById(id).innerHTML = html;
+            })
+            .catch(error => console.error('Gagal memuat:', file, error));
+    }
+
+    // Load semua section HTML
+    document.addEventListener("DOMContentLoaded", function () {
+        loadSection('section-cafe-list', 'sections/cafe-list.html');
+        loadSection('section-form', 'sections/form.html');
+    });
+
+    // Tambahkan smooth scroll (optional)
+    document.querySelectorAll('.nav__link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const section = document.getElementById(targetId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
