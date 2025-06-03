@@ -173,7 +173,7 @@ body.dark-theme {
 .section__title {
   position: relative;
   font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-3);
+  margin-bottom: var(--mb-1);
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
@@ -1265,3 +1265,36 @@ body.dark-theme {
   background-color: #555;
 }
 
+.intro__card {
+  background: linear-gradient(135deg, #f9fafb, #f1f5f9);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 2rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.intro__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.15);
+}
+
+.intro__title {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.intro__text {
+  font-size: 1.1rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.intro__text strong {
+  color: #2b6cb0;
+  font-weight: 600;
+}
