@@ -1214,3 +1214,47 @@ body.dark-theme {
     right: 3rem;
   }
 }
+
+.cafe__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cafe__card {
+  background-color: #e0e0e0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cafe__img {
+  width: 100%;
+  height: 180px;
+  background-color: #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.cafe__name {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.cafe__button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cafe__button:hover {
+  background-color: #555;
+}
+
