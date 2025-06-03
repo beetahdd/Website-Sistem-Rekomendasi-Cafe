@@ -381,8 +381,15 @@ body.dark-theme {
 }
 
 .button--gray {
-  background-color: hsl(0, 0%, 75%);
-  color: var(--title-color);
+  background-color: #d3d3d3;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 1rem;
+  display: inline-block;
+  text-align: center;
 }
 
 .button--gray:hover {
@@ -974,7 +981,10 @@ body.dark-theme {
     width: 220px;
   }
   .home__title {
-    font-size: var(--h1-font-size);
+    font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 2rem;
   }
   .home__button {
     font-size: var(--smaller-font-size);
