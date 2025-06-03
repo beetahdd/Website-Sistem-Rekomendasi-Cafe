@@ -22,76 +22,74 @@
 
 <body>
     <!--==================== HEADER ====================-->
-    </head>
-  <body>
-    <!--==================== HEADER ====================-->
+
     <header class="header" id="header">
-      <!--========== NAVBAR ==========-->
-      <nav class="nav container">
-        <!-- Logo -->
-        <a href="#" class="nav__logo">
-          <i class="bx bx-coffee nav__logo-icon"></i>
-          <strong>CAFE<br />LOCATOR</strong>
-        </a>
+        <!--========== NAVBAR ==========-->
+        <nav class="nav container">
+            <!-- Logo -->
+            <a href="#" class="nav__logo">
+                <i class="bx bx-coffee nav__logo-icon"></i>
+                <strong>CAFE<br />LOCATOR</strong>
+            </a>
 
-        <!-- Menu List -->
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link active-link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="#list" class="nav__link">List Cafe</a>
-            </li>
-            <li class="nav__item">
-              <a href="#form" class="nav__link">Form Recommended</a>
-            </li>
-            <li class="nav__item">
-              <a href="#result" class="nav__link">Result</a>
-            </li>
-          </ul>
+            <!-- Menu List -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#section-home" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#section-about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#section-cafe-list" class="nav__link">List Cafe</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#section-form" class="nav__link">Form Recommended</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#section-result" class="nav__link">Result</a>
+                    </li>
+                </ul>
 
-          <!-- Close button for mobile -->
-          <div class="nav__close" id="nav-close">
-            <i class="bx bx-x"></i>
-          </div>
-        </div>
+                <!-- Close button for mobile -->
+                <div class="nav__close" id="nav-close">
+                    <i class="bx bx-x"></i>
+                </div>
+            </div>
 
-        <!-- Right-side icons -->
-        <div class="nav__btns">
-          <!-- Theme toggle -->
-          <i class="bx bx-moon change-theme" id="theme-button"></i>
+            <!-- Right-side icons -->
+            <div class="nav__btns">
+                <!-- Theme toggle -->
+                <i class="bx bx-moon change-theme" id="theme-button"></i>
 
-          <!-- Mobile menu toggle -->
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="bx bx-grid-alt"></i>
-          </div>
-        </div>
-      </nav>
+                <!-- Mobile menu toggle -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="bx bx-grid-alt"></i>
+                </div>
+            </div>
+        </nav>
     </header>
 
-        <!--==================== MAIN ====================-->
+    <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
         <div id="section-home"></div>
 
         <!--==================== FEATURED ====================-->
-        <div id="section-featured"></div>
+        <div id="section-about"></div>
 
         <!--==================== story ====================-->
-        <div id="section-story"></div>
+        <div id="section-cafe-list"></div>
 
         <!--==================== PRODUCTS ====================-->
-        <div id="section-products"></div>
+        <div id="section-form"></div>
 
         <!--==================== TESTIMONIAL ====================-->
-        <div id="section-testimonial"></div>
+        <div id="section-results"></div>
 
         <!--==================== NEW ====================-->
-        <div id="section-new"></div>
+        <!-- <div id="section-new"></div> -->
 
     </main>
 
@@ -178,7 +176,7 @@
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
     <script>
-
+        // Fungsi untuk memuat file HTML ke dalam section
         function loadSection(id, file) {
             fetch(file)
                 .then(response => response.text())
@@ -188,14 +186,28 @@
                 .catch(error => console.error('Gagal memuat:', file, error));
         }
 
-        // Muat semua section yang dipisah
-        loadSection('section-home', 'sections/home.html');
-        loadSection('section-featured', 'sections/featured.html');
-        loadSection('section-story', 'sections/story.html');
-        loadSection('section-products', 'sections/products.html');
-        loadSection('section-testimonial', 'sections/testimonial.html');
-        loadSection('section-new', 'sections/new.html');
+        // Load semua section HTML
+        document.addEventListener("DOMContentLoaded", function () {
+            loadSection('section-home', 'sections/home.html');
+            loadSection('section-about', 'sections/about.html');
+            loadSection('section-cafe-list', 'sections/cafe-list.html');
+            loadSection('section-story', 'sections/form.html');
+            loadSection('section-products', 'sections/results.html');
+        });
+
+        // Tambahkan smooth scroll (optional)
+        document.querySelectorAll('.nav__link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const section = document.getElementById(targetId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
     </script>
+
 </body>
 
 
