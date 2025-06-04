@@ -28,12 +28,12 @@ const linkAction = () =>{
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-const scrollHeader = () =>{
-    const header = document.getElementById('header')
-    // Add a class if the bottom offset is greater than 50 of the viewport
-    this.scrollY >= 50 ? header.classList.add('scroll-header') 
-                       : header.classList.remove('scroll-header')
+const scrollHeader = () => {
+    const header = document.getElementById('header');
+    window.scrollY >= 50 ? header.classList.add('scroll-header')
+                         : header.classList.remove('scroll-header');
 }
+
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== TESTIMONIAL SWIPER ===============*/
@@ -87,12 +87,12 @@ const scrollActive = () =>{
 window.addEventListener('scroll', scrollActive)
 
 /*=============== SHOW SCROLL UP ===============*/ 
-const scrollUp = () =>{
-	const scrollUp = document.getElementById('scroll-up')
-    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-						: scrollUp.classList.remove('show-scroll')
+const scrollUp = () => {
+    const scrollUp = document.getElementById('scroll-up');
+    window.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+                          : scrollUp.classList.remove('show-scroll');
 }
+
 window.addEventListener('scroll', scrollUp)
 
 /*=============== SHOW CART ===============*/
@@ -145,3 +145,35 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+// Modular section loader (tambahkan di akhir main.js)
+function loadSection(id, file, callback) {
+    fetch(file)
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById(id).innerHTML = html;
+            if (callback) callback();
+        });
+}
+
+import { initResultsSection } from './sections/results.js'; // Tambahkan import lain sesuai kebutuhan
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadSection('section-home', 'sections/home.html');
+    loadSection('section-about', 'sections/about.html');
+    loadSection('section-cafe-list', 'sections/cafe-list.html');
+    loadSection('section-form', 'sections/form.html');
+    loadSection('section-results', 'sections/results.html', initResultsSection); // ✅ Jalankan script setelah dimuat
+
+    // Smooth scroll
+    document.querySelectorAll('.nav__link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const section = document.getElementById(targetId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
