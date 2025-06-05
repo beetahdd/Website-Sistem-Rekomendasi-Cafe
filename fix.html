@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe Locator</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo"
+          ><i class="bx bx-coffee nav__logo-icon"></i><strong>CAFE<br />LOCATOR</strong></a
+        >
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#section-home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#section-about" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="#section-cafe-list" class="nav__link">List Cafe</a></li>
+            <li class="nav__item"><a href="#section-form" class="nav__link">Form Recommended</a></li>
+            <li class="nav__item"><a href="#section-results" class="nav__link">Result</a></li>
+          </ul>
+          <div class="nav__close" id="nav-close"><i class="bx bx-x"></i></div>
+        </div>
+        <div class="nav__btns">
+          <i class="bx bx-moon change-theme" id="theme-button"></i>
+          <div class="nav__toggle" id="nav-toggle"><i class="bx bx-grid-alt"></i></div>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      <!-- HOME -->
+      <section class="home" id="section-home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h1 class="home__title">Rekomendasi Cafe<br />Wilayah Paingan<br />Maguwoharjo</h1>
+            <div class="home__btns">
+              <a href="#section-cafe-list" class="button button--gray button--small">LIHAT</a>
+              <a href="#section-form" class="button button--gray button--small">CARI</a>
+            </div>
+          </div>
+          <div class="home__img-bg">
+            <img src="assets/img/logo-cafe-locator.png" alt="Cafe Locator" class="home__img" />
+          </div>
+        </div>
+      </section>
+
+      <!-- HOME ENDS-->
+
+      <!-- ABOUT -->
+
+      <section class="new section container" id="section-about">
+        <h2 class="section__title">About</h2>
+        <article class="intro__card">
+          <div class="intro__content">
+            <h2 class="intro__title">Hai, sobat pejuang!👀</h2>
+            <p class="intro__text">
+              Mau nugas? Mau nongkrong? Mau kerja kelompok? ☕💡🎓<br /><br />
+              Ini adalah sistem rekomendasi untuk membantu Anda mencari cafe/coffee shop khususnya di daerah
+              <strong>Paingan, Maguwoharjo</strong>.<br /><br />
+              Sesuaikan dengan preferensi Anda agar sesuai dengan tempat yang Anda inginkan. Masukkan data sesuai pilihan Anda dan <strong>dapatkan hasil rekomendasinya</strong>!<br /><br />
+              Sistem ini dibangun menggunakan pendekatan <strong>Knowledge-Based</strong> dan <strong>Constraint-Based Recommendation</strong>.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- ABOUT ENDS-->
+
+      <!-- CAFE LIST -->
+      <section class="cafe-list section container" id="section-cafe-list">
+        <h2 class="section__title">List Cafe</h2>
+
+        <div class="cafe__container grid">
+          <!-- Item Cafe -->
+          <article class="cafe__card">
+            <img src="assets/img/kopidarihati.png" alt="Kopi Dari Hati Jax Cafe" />
+            <h3 class="cafe__name">Kopi Dari Hati Jax Cafe</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/opaomes.png" alt="OpaOmes Coffee" />
+            <h3 class="cafe__name">OpaOmes Coffee</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/bentokopi.png" alt="Bento Kopi Maguwoharjo" />
+            <h3 class="cafe__name">Bento Kopi Maguwoharjo</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/lestari.png" alt="Lestari Corner Coffee" />
+            <h3 class="cafe__name">Lestari Corner Coffee</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/tentrem.png" alt="Tentrem Bumi Coffee" />
+            <h3 class="cafe__name">Tentrem Bumi Coffee</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/teraskem.png" alt="Teras Kemarin" />
+            <h3 class="cafe__name">Teras Kemarin</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/damarasha.png" alt="Damarasha Coffee and Space" />
+            <h3 class="cafe__name">Damarasha Coffee and Space</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/mocoffelo.png" alt="MOCOFFELO" />
+            <h3 class="cafe__name">MOCOFFELO</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/kopikima.png" alt="Kopi Kima" />
+            <h3 class="cafe__name">Kopi Kima</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/lukcoffe.png" alt="Luk Coffe & Book" />
+            <h3 class="cafe__name">Luk Coffe & Book</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/eastpresso.png" alt="Eastpresso Coffee and Space" />
+            <h3 class="cafe__name">Eastpresso Coffee and Space</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/semuda.png" alt="Semuda Kopi Maguwoharjo" />
+            <h3 class="cafe__name">Semuda Kopi Maguwoharjo</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/dingo.png" alt="Dingo Coffee Maguwoharjo" />
+            <h3 class="cafe__name">Dingo Coffee Maguwoharjo</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/mulacafe.png" alt="Mula Cafe and Eatery" />
+            <h3 class="cafe__name">Mula Cafe and Eatery</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+
+          <article class="cafe__card">
+            <img src="assets/img/gimbo.png" alt="MOCOFFELO" />
+            <h3 class="cafe__name">Gimbo Coffee Roastery</h3>
+            <a href="#" class="button cafe__button">Lihat Detail</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- CAFELIST ENDS-->
+
+      <!-- FORM -->
+
+      <section class="products section container" id="section-form">
+        <h2 class="section__title">Search Cafe</h2>
+        <section class="form-section">
+          <div>
+            <h2>Masukkan Preferensi Pilihan Cafe Anda</h2>
+          </div>
+
+          <form class="preference-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Pilih Jam Kedatangan</label>
+                <input type="time" />
+
+                <label>Ketersediaan Menu</label>
+                <select name="menu">
+                  <option>Makanan ringan & Minuman</option>
+                  <option>Makanan ringan, berat & Minuman</option>
+                  <option>Minuman saja</option>
+                </select>
+
+                <label>Pilihan Range Menu</label>
+                <select name="harga">
+                  <option>Rp 1-25rb</option>
+                  <option>Rp 3-30rb</option>
+                  <option>Rp 5-50rb</option>
+                  <option>Rp 6-30rb</option>
+                  <option>Rp 15-30rb</option>
+                  <option>Rp 25-50rb</option>
+                </select>
+
+                <label>Fasilitas AC</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="ac" /> Tersedia</label>
+                  <label><input type="radio" name="ac" /> Tidak Tersedia</label>
+                </div>
+
+                <label>Fasilitas Colokan</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="colokan" /> Tersedia</label>
+                  <label><input type="radio" name="colokan" /> Tidak Tersedia</label>
+                </div>
+
+                <label>Parkir</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="parkir" /> Gratis</label>
+                  <label><input type="radio" name="parkir" /> Bayar</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Nilai Makanan</label>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+
+                <label>Nilai Layanan</label>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+
+                <label>Nilai Suasana</label>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+
+                <label>Fasilitas WIFI</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="wifi" /> Tersedia</label>
+                  <label><input type="radio" name="wifi" /> Tidak Tersedia</label>
+                </div>
+
+                <label>Fasilitas Smoking Area</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="smoking" /> Tersedia</label>
+                  <label><input type="radio" name="smoking" /> Tidak Tersedia</label>
+                </div>
+
+                <label>Pilihan Rating</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="rating" /> 1-3</label>
+                  <label><input type="radio" name="rating" /> 4-5</label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">CARI</button>
+          </form>
+        </section>
+      </section>
+
+      <!-- FORMS ENDS-->
+
+      <!-- RESULTS -->
+
+      <section class="section container" id="section-results">
+        <h2 class="section__title" style="text-align: center; font-size: 24px; margin-bottom: 1rem">Result Cafe</h2>
+        <div id="results-container"></div>
+      </section>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const resultsContainer = document.getElementById("results-container");
+          const cafeData = JSON.parse(localStorage.getItem("filteredResults") || "[]");
+          if (cafeData.length === 0) {
+            resultsContainer.innerHTML = "<p style='text-align:center'>Tidak ada hasil sesuai preferensi Anda.</p>";
+            return;
+          }
+          cafeData.forEach((cafe) => {
+            const cafeItem = `
+          <div class="result__item" style="display: flex; align-items: center; background-color: #ddd; padding: 20px; margin-top: 20px;">
+            <div class="result__image" style="width: 80px; height: 100px; background-color: white; margin-right: 20px;"></div>
+            <div class="result__info" style="flex-grow: 1;">
+              <div class="result__name" style="font-weight: bold;">${cafe.nama}</div>
+              <div class="result__address">Jam Operasional: ${cafe.jam}</div>
+              <div class="result__address">Harga: ${cafe.harga}</div>
+              <div class="result__address">Menu: ${cafe.makanan}</div>
+            </div>
+            <div class="result__rating" style="text-align: right;">
+              <div style="font-weight: bold;">Rating</div>
+              <div>${cafe.rating}</div>
+            </div>
+          </div>`;
+            resultsContainer.innerHTML += cafeItem;
+          });
+        });
+      </script>
+      <!-- RESULTS ENDS-->
+    </main>
+
+    <footer class="footer section">
+      <span class="footer__copy">UAS Sistem Rekomendasi</span>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up"><i class="bx bx-up-arrow-alt scrollup__icon"></i></a>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

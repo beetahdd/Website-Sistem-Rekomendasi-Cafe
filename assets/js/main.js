@@ -1,18 +1,18 @@
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
 
 /* Menu show */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu')
     })
 }
 
 /* Menu hidden */
-if(navClose){
-    navClose.addEventListener('click', () =>{
+if (navClose) {
+    navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu')
     })
 }
@@ -20,7 +20,7 @@ if(navClose){
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll('.nav__link')
 
-const linkAction = () =>{
+const linkAction = () => {
     const navMenu = document.getElementById('nav-menu')
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
@@ -31,7 +31,7 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 const scrollHeader = () => {
     const header = document.getElementById('header');
     window.scrollY >= 50 ? header.classList.add('scroll-header')
-                         : header.classList.remove('scroll-header');
+        : header.classList.remove('scroll-header');
 }
 
 window.addEventListener('scroll', scrollHeader)
@@ -54,69 +54,69 @@ let newSwiper = new Swiper(".new-swiper", {
 
     breakpoints: {
         576: {
-          slidesPerView: 2,
+            slidesPerView: 2,
         },
         768: {
-          slidesPerView: 3,
+            slidesPerView: 3,
         },
         1024: {
-          slidesPerView: 4,
+            slidesPerView: 4,
         },
     },
 });
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
-    
-const scrollActive = () =>{
-  	const scrollDown = window.scrollY
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+const scrollActive = () => {
+    const scrollDown = window.scrollY
 
-		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+        if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+            sectionsClass.classList.add('active-link')
+        } else {
+            sectionsClass.classList.remove('active-link')
+        }
+    })
 }
 window.addEventListener('scroll', scrollActive)
 
-/*=============== SHOW SCROLL UP ===============*/ 
+/*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
     const scrollUp = document.getElementById('scroll-up');
     window.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-                          : scrollUp.classList.remove('show-scroll');
+        : scrollUp.classList.remove('show-scroll');
 }
 
 window.addEventListener('scroll', scrollUp)
 
 /*=============== SHOW CART ===============*/
 const cart = document.getElementById('cart'),
-      cartShop = document.getElementById('cart-shop'),
-      cartClose = document.getElementById('cart-close')
+    cartShop = document.getElementById('cart-shop'),
+    cartClose = document.getElementById('cart-close')
 
 /*===== CART SHOW =====*/
 /* Validate if constant exists */
-if(cartShop){
-    cartShop.addEventListener('click', () =>{
+if (cartShop) {
+    cartShop.addEventListener('click', () => {
         cart.classList.add('show-cart')
     })
 }
 
 /*===== CART HIDDEN =====*/
 /* Validate if constant exists */
-if(cartClose){
-    cartClose.addEventListener('click', () =>{
+if (cartClose) {
+    cartClose.addEventListener('click', () => {
         cart.classList.remove('show-cart')
     })
 }
 
-/*=============== DARK LIGHT THEME ===============*/ 
+/*=============== DARK LIGHT THEME ===============*/
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'bx-sun'
@@ -131,9 +131,9 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx bx-
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'bx bx-moon' ? 'add' : 'remove'](iconTheme)
+    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'bx bx-moon' ? 'add' : 'remove'](iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
@@ -156,24 +156,24 @@ function loadSection(id, file, callback) {
         });
 }
 
-import { initResultsSection } from './sections/results.js'; // Tambahkan import lain sesuai kebutuhan
+// import { initResultsSection } from './sections/results.js'; // Tambahkan import lain sesuai kebutuhan
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadSection('section-home', 'sections/home.html');
-    loadSection('section-about', 'sections/about.html');
-    loadSection('section-cafe-list', 'sections/cafe-list.html');
-    loadSection('section-form', 'sections/form.html');
-    loadSection('section-results', 'sections/results.html', initResultsSection); // ✅ Jalankan script setelah dimuat
+// document.addEventListener("DOMContentLoaded", () => {
+//     loadSection('section-home', 'sections/home.html');
+//     loadSection('section-about', 'sections/about.html');
+//     loadSection('section-cafe-list', 'sections/cafe-list.html');
+//     loadSection('section-form', 'sections/form.html');
+//     loadSection('section-results', 'sections/results.html', initResultsSection); // ✅ Jalankan script setelah dimuat
 
-    // Smooth scroll
-    document.querySelectorAll('.nav__link').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const section = document.getElementById(targetId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-});
+//     // Smooth scroll
+//     document.querySelectorAll('.nav__link').forEach(link => {
+//         link.addEventListener('click', function (e) {
+//             e.preventDefault();
+//             const targetId = this.getAttribute('href').substring(1);
+//             const section = document.getElementById(targetId);
+//             if (section) {
+//                 section.scrollIntoView({ behavior: 'smooth' });
+//             }
+//         });
+//     });
+// });
