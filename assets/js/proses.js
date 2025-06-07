@@ -435,6 +435,28 @@ const cafes = [
     }
 ];
 
+function parseJamToMenit(jamStr) {
+    const [jam, menit] = jamStr.split('.').map(Number);
+    return jam * 60 + (menit || 0);
+}
+
+function getRangeJamMenit(jamBukaStr) {
+    const [bukaStr, tutupStr] = jamBukaStr.split("-");
+    return {
+        buka: parseJamToMenit(bukaStr),
+        tutup: parseJamToMenit(tutupStr),
+    };
+}
+
+function cocokJamKunjungan(jamBukaStr, jamUser) {
+    const { buka, tutup } = getRangeJamMenit(jamBukaStr);
+    const is24Jam = buka === 0 && tutup === 0;
+    return is24Jam || (
+        buka < tutup
+            ? jamUser >= buka && jamUser <= tutup
+            : jamUser >= buka || jamUser <= tutup
+    );
+}
 
 document.getElementById("formRekomendasi").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -453,9 +475,14 @@ document.getElementById("formRekomendasi").addEventListener("submit", function (
     const layanan = parseInt(form.get("nilaiLayanan") || 0);
     const suasana = parseInt(form.get("nilaiSuasana") || 0);
 
+    const [jamHour, jamMinute] = jam.split(":").map(Number);
+    const jamUser = jamHour * 60 + jamMinute;
+
     const filtered = cafes.filter((cafe) => {
+        const cocokJam = cocokJamKunjungan(cafe.jamBuka, jamUser);
 
         return (
+            cocokJam &&
             cafe.rangeHarga === harga &&
             cafe.ketersediaan === menu &&
             cafe.ac === ac &&
@@ -469,6 +496,7 @@ document.getElementById("formRekomendasi").addEventListener("submit", function (
             cafe.suasana >= suasana
         );
     });
+    
     filtered.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
     // Kosongkan container terlebih dahulu
     const resultContainer = document.getElementById("results-container");
