@@ -485,9 +485,9 @@ document.getElementById("formRekomendasi").addEventListener("submit", function (
             cocokJam &&
             cafe.rangeHarga === harga &&
             cafe.ketersediaan === menu &&
-            cafe.ac === ac &&
-            cafe.colokan === colokan &&
             cafe.wifi === wifi &&
+            cafe.colokan === colokan &&
+            cafe.ac === ac &&
             cafe.smokingArea === smoking &&
             cafe.parkir === parkir &&
             cafe.ruangan === ruangan &&
@@ -496,7 +496,7 @@ document.getElementById("formRekomendasi").addEventListener("submit", function (
             cafe.suasana >= suasana
         );
     });
-    
+
     filtered.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
     // Kosongkan container terlebih dahulu
     const resultContainer = document.getElementById("results-container");
