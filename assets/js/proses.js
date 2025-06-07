@@ -498,9 +498,9 @@ document.getElementById("formRekomendasi").addEventListener("submit", function (
     });
 
     filtered.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
-    // Kosongkan container terlebih dahulu
+
     const resultContainer = document.getElementById("results-container");
-    resultContainer.innerHTML = ""; // reset sebelumnya
+    resultContainer.innerHTML = "";
 
     if (filtered.length === 0) {
         resultContainer.innerHTML = '<p style="text-align: center; font-size: 24px; margin-bottom: 1rem">Tidak ada hasil yang sesuai preferensi Anda.</p>';
